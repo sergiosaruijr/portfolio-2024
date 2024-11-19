@@ -45,7 +45,7 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
         }`
       : `${months} mes${months > 1 ? 'es' : ''}`
 
-  console.log(months, years, monthsRemaining)
+  // console.log(months, years, monthsRemaining)
   
   return( 
     <motion.div

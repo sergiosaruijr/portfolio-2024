@@ -32,8 +32,7 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps ) => {
           exit={{opacity: 0, x: -100}}
           transition={{duration: 0.5}}
         >
-          <p>Olá , meu nome é</p>
-          <h2>Sergio Sarui</h2>
+          <h1 className='text-2xl'>Sergio Sarui</h1>
 
           <div>
             <div className='text-gray-400 my-6 text-sm sm:text-base'>
@@ -89,7 +88,7 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps ) => {
             src={homeInfo.profilePicture.url}
             // src='/images/profile-pic3.png'
             alt='Foto de perfil do Sergio Sarui'
-            className='w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover'
+            className='w-[250px] h-[250px] lg:w-[320px] lg:h-[304px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover'
           />
         </motion.div>
       </div>
