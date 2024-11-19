@@ -21,7 +21,7 @@ export const KnownTechs = ({ techs }: KnownTechsProps) => {
             initial={{opacity: 0, x: -100}}
             whileInView={{opacity: 1, x: 0}}
             exit={{opacity: 0, x: -100}}
-            transition={{duration: 0.15, delay: i * 0.1}}
+            transition={{duration: 0.15, delay: i * 0.03}}
           >
             <KnownTech tech={tech}/>
           </motion.div>

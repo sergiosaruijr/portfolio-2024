@@ -41,9 +41,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
         <ContactForm />
         <Footer />
+        <BackToTop />
       </body>
-      <BackToTop />
-      {/*  verifcar problema de Hydration  */}
     </html>
   )
 }
