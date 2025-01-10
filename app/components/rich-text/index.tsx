@@ -1,30 +1,38 @@
-import { RichText as CMSRichText } from '@graphcms/rich-text-react-renderer'
-import { ComponentProps } from 'react'
+import { RichText as CMSRichText } from "@graphcms/rich-text-react-renderer";
+import { RichTextContent } from "@graphcms/rich-text-types";
+import { ComponentProps } from "react";
 
-type RichTextProps = ComponentProps<typeof CMSRichText>
+// type RichTextProps = ComponentProps<typeof CMSRichText>]
+type RichTextProps = ComponentProps<typeof CMSRichText> & {
+  content: RichTextContent | null; // Garantir que o tipo correto
+};
 
-export const RichText = ({ ...props}: RichTextProps) => {
+export const RichText = ({ content, ...props }: RichTextProps) => {
+  if (!content || Object.keys(content).length === 0) {
+    return <div>Sem conteúdo disponível.</div>; // fallback caso seja inválido
+  }
   return (
     <CMSRichText
-      { ...props}
+      {...props}
+      content={content}
       renderers={{
         bold: ({ children }) => (
-          <b className='text-gray-50 font-medium'>{children}</b>
+          <b className="font-medium text-gray-50">{children}</b>
         ),
         ul: ({ children }) => (
-          <ul className='list-disc list-inside pl-2 flex flex-col gap-1'>
+          <ul className="flex list-inside list-disc flex-col gap-1 pl-2">
             {children}
           </ul>
         ),
-        a: ({children, ...props}) => (
-          <a 
+        a: ({ children, ...props }) => (
+          <a
             {...props}
-            className='hover:text-emerald-500 transition-colors underline'
+            className="underline transition-colors hover:text-emerald-500"
           >
             {children}
           </a>
-        )
+        ),
       }}
     />
-  )
-}
+  );
+};

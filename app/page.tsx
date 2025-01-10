@@ -1,9 +1,10 @@
-import { HighlightedProjects } from './components/pages/home/highlighted-projects';
-import { KnownTechs } from './components/pages/home/known-techs';
-import { ProfileSection } from './components/pages/home/profile-section';
-import { WorkExperience } from './components/pages/home/work-experience';
-import { HomePageData } from './types/page-info';
-import { fetchHygraphQuery } from './utils/fetch-hygraph-query';
+import { HighlightedProjects } from "./components/pages/home/highlighted-projects";
+import { KnownTechs } from "./components/pages/home/known-techs";
+import { ProfileSection } from "./components/pages/home/profile-section";
+import { WorkExperience } from "./components/pages/home/work-experience";
+import { HomePageData } from "./types/page-info";
+import { fetchHygraphQuery } from "./utils/fetch-hygraph-query";
+import { RichTextContent } from "@graphcms/rich-text-types";
 
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
@@ -27,7 +28,7 @@ const getPageData = async (): Promise<HomePageData> => {
           name
           startDate
         }
-        highlightProjects {
+        highlightProjects{
           slug
           thumbnail {
             url
@@ -56,26 +57,56 @@ const getPageData = async (): Promise<HomePageData> => {
         }
       }
     }
-  `
+  `;
 
-  return fetchHygraphQuery(
-    query,
-    // 60 * 60 * 24 // 24 hours
-    60
-  )
-}
+  try {
+    const data = await fetchHygraphQuery<HomePageData>(query, 60 * 60 * 24);
+
+    if (!data || !data.page) {
+      // Retornar um fallback se os dados não forem encontrados
+      return {
+        page: {
+          introduction: { raw: {} as RichTextContent },
+          technologies: [],
+          profilePicture: { url: "" },
+          socials: [],
+          knownTechs: [],
+          highlightProjects: [],
+        },
+        workExperiences: [],
+      };
+    }
+
+    return data;
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error);
+
+    // Fallback para casos de erro
+    return {
+      page: {
+        introduction: { raw: {} as RichTextContent },
+        technologies: [],
+        profilePicture: { url: "" },
+        socials: [],
+        knownTechs: [],
+        highlightProjects: [],
+      },
+      workExperiences: [],
+    };
+  }
+};
 
 export default async function Home() {
-  const { page: pageData, workExperiences } = await getPageData()
+  const { page: pageData, workExperiences } = await getPageData();
 
-  // console.log(pageData)
-  
+  // console.log(pageData);
+
   return (
     <>
-      <ProfileSection homeInfo={pageData}/>
-      <KnownTechs techs={pageData.knownTechs}/>
-      <HighlightedProjects projects={pageData.highlightProjects}/>
-      <WorkExperience experiences={workExperiences}/>
+      <ProfileSection homeInfo={pageData} />
+      <KnownTechs techs={pageData.knownTechs} />
+      <HighlightedProjects projects={pageData.highlightProjects} />
+      <WorkExperience experiences={workExperiences} />
     </>
-  )
+  );
 }
