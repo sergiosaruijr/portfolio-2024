@@ -34,7 +34,7 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl">Sérgio Akira Sarui Junior</h1>
+          <h1 className="text-4xl text-white">Sérgio Akira Sarui Junior</h1>
 
           <div>
             <div className="my-6 text-sm text-gray-400 sm:text-base">
