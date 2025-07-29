@@ -60,7 +60,7 @@ const getPageData = async (): Promise<HomePageData> => {
   `;
 
   try {
-    const data = await fetchHygraphQuery<HomePageData>(query, 60 * 60 * 24);
+    const data = await fetchHygraphQuery<HomePageData>(query, 60 * 5);
 
     if (!data || !data.page) {
       // Retornar um fallback se os dados não forem encontrados
