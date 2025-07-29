@@ -28,7 +28,7 @@ const getPageData = async (): Promise<HomePageData> => {
           name
           startDate
         }
-        highlightProjects{
+        highlightProjects(first: 5){
           slug
           thumbnail {
             url
