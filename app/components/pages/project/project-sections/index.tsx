@@ -12,7 +12,7 @@ type ProjectSectionsProps = {
 export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
   return (
     <section className="container my-12 flex flex-col gap-8 md:my-32 md:gap-32">
-      {sections?.toReversed().map((section) => (
+      {[...(sections ?? [])].reverse().map((section) => (
         <motion.div
           key={section.title}
           className="flex flex-col items-center gap-6 md:gap-12"
@@ -25,9 +25,6 @@ export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
             width={1080}
             height={672}
             className="aspect-auto rounded-lg object-cover"
-            // width={500}
-            // height={300}
-            // className="w-full rounded-lg object-cover sm:w-3/4 md:w-2/3 lg:w-1/2"
             alt={`Imagem da sessão ${section.title}`}
             unoptimized
           />

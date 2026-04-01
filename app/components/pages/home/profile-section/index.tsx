@@ -21,9 +21,7 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-  // console.log("teste", homeInfo.introduction);
-  // console.dir(homeInfo.introduction, { depth: null });
-  // console.log("Response Status:", response.status);
+
   return (
     <section className="flex w-full flex-col justify-end bg-profile-image bg-cover bg-center bg-no-repeat py-32 pb-10 sm:pb-32 lg:h-[755px] lg:pb-[110px]">
       <div className="container flex flex-col-reverse items-start justify-between lg:flex-row">
@@ -86,7 +84,6 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
             width={420}
             height={404}
             src={homeInfo.profilePicture.url}
-            // src='/images/profile-pic3.png'
             alt="Foto de perfil do Sergio Sarui"
             className="mb-6 h-[250px] w-[250px] rounded-lg object-cover shadow-2xl lg:mb-0 lg:h-[304px] lg:w-[320px]"
           />

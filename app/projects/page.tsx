@@ -23,10 +23,7 @@ const getPageDate = async (): Promise<ProjectsPageData> => {
       }
     }`;
 
-  return fetchHygraphQuery(
-    query,
-    1000 * 60 * 60 * 24, // one day
-  );
+  return fetchHygraphQuery(query, 1000 * 60 * 60 * 24);
 };
 
 export default async function Projects() {
