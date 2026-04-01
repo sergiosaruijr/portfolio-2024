@@ -28,16 +28,16 @@
 //   )
 // }
 
-import { HorizontalDivider } from '@/app/components/divider/horizontal'
-import { SectionTitle } from '@/app/components/section-title'
-import { ProjectCard } from './project-card'
-import { HiArrowNarrowRight } from 'react-icons/hi'
-import { Link } from '@/app/components/link'
-import { Project } from '@/app/types/projects'
+import { HorizontalDivider } from "@/app/components/divider/horizontal";
+import { SectionTitle } from "@/app/components/section-title";
+import { ProjectCard } from "./project-card";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { Link } from "@/app/components/link";
+import { Project } from "@/app/types/projects";
 
 type HighlightedProjectsProps = {
-  projects: Project[]
-}
+  projects: Project[];
+};
 
 export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
   return (
@@ -46,7 +46,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
       <HorizontalDivider className="mb-16" />
 
       <div>
-        {projects?.map((project) => (
+        {projects?.toReversed().map((project) => (
           <div key={project.slug}>
             <ProjectCard project={project} />
             <HorizontalDivider className="my-16" />
@@ -61,5 +61,5 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
         </p>
       </div>
     </section>
-  )
-}
+  );
+};

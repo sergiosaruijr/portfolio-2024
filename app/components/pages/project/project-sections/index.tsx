@@ -12,7 +12,7 @@ type ProjectSectionsProps = {
 export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
   return (
     <section className="container my-12 flex flex-col gap-8 md:my-32 md:gap-32">
-      {sections?.map((section) => (
+      {sections?.toReversed().map((section) => (
         <motion.div
           key={section.title}
           className="flex flex-col items-center gap-6 md:gap-12"
