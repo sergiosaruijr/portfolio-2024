@@ -41,10 +41,7 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
     }
   }
   `;
-  const data = fetchHygraphQuery<ProjectPageData>(
-    query,
-    1000 * 60 * 60 * 24, // one day
-  );
+  const data = fetchHygraphQuery<ProjectPageData>(query, 1000 * 60 * 60 * 24);
 
   return data;
 };
@@ -81,8 +78,6 @@ export async function generateMetadata({
 }: ProjectProps): Promise<Metadata> {
   const data = await getProjectDetails(slug);
   const project = data.project;
-
-  // console.log(project);
 
   return {
     title: project.title,

@@ -22,7 +22,6 @@ export const fetchHygraphQuery = async <T>(
 
   console.log("Response Status:", response.status);
 
-  // Check if response is ok (200-299)
   if (!response.ok) {
     const errorText = await response.text();
     console.error("API Error:", errorText);
