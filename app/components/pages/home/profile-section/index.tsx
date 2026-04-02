@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Button } from "@/app/components/button";
-import { CMSIcon } from "@/app/components/cms-icon";
-import { RichText } from "@/app/components/rich-text";
-import { TechBadge } from "@/app/components/tech-badge";
-import { HomePageInfo } from "@/app/types/page-info";
-import Image from "next/image";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { techBadgeAnimation } from "@/app/lib/animations";
+import { Button } from '@/app/components/button';
+import { CMSIcon } from '@/app/components/cms-icon';
+import { RichText } from '@/app/components/rich-text';
+import { TechBadge } from '@/app/components/tech-badge';
+import { HomePageInfo } from '@/app/types/page-info';
+import Image from 'next/image';
+import { HiArrowNarrowRight } from 'react-icons/hi';
+import { motion } from 'framer-motion';
+import { techBadgeAnimation } from '@/app/lib/animations';
 
 type ProfileSectionProps = {
   homeInfo: HomePageInfo;
@@ -16,9 +16,9 @@ type ProfileSectionProps = {
 
 export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
   const handleContact = () => {
-    const contactSection = document.querySelector("#contact");
+    const contactSection = document.querySelector('#contact');
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -63,6 +63,7 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
                     href={contact.url}
                     key={`contact-${index}`}
                     target="_blank"
+                    rel="noreferrer"
                     className="transition-colors hover:text-gray-100"
                   >
                     <CMSIcon icon={contact.iconSvg} />
