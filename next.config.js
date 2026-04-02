@@ -2,16 +2,16 @@
 const nextConfig = {
   images: {
     domains: [
-      "media.graphassets.com",
-      "sangw.in",
-      "localhost",
-      "picsum.photos",
-      "sa-east-1.graphassets.com",
+      'media.graphassets.com',
+      'sangw.in',
+      'localhost',
+      'picsum.photos',
+      'sa-east-1.graphassets.com',
     ],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**',
       },
     ],
   },

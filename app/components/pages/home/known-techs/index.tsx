@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { SectionTitle } from "@/app/components/section-title";
-import { KnownTech } from "./known-tech";
-import { KnownTech as IKnownTech } from "@/app/types/projects";
-import { motion } from "framer-motion";
+import { SectionTitle } from '@/app/components/section-title';
+import { KnownTech } from './known-tech';
+import { KnownTech as IKnownTech } from '@/app/types/projects';
+import { motion } from 'framer-motion';
 
 type KnownTechsProps = {
   techs: IKnownTech[];
@@ -14,7 +14,7 @@ export const KnownTechs = ({ techs }: KnownTechsProps) => {
     <section className="container py-16">
       <SectionTitle subtitle="competências" title="Conhecimentos" />
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-[60px]">
+      <div className="mt-[60px] grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3">
         {techs?.map((tech, i) => (
           <motion.div
             key={tech.name}
