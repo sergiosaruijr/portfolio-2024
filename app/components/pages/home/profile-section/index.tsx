@@ -24,7 +24,7 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
   };
 
   return (
-    <section className="flex w-full flex-col justify-start bg-profile-image bg-cover bg-center bg-no-repeat py-32 pb-40 pt-28 sm:pb-32 lg:h-[755px] lg:pb-[110px]">
+    <section className="flex w-full flex-col justify-start bg-profile-image bg-cover bg-center bg-no-repeat py-32 pb-40 pt-[120px] sm:pb-32 lg:h-[755px] lg:pb-[110px]">
       <div className="container flex flex-col-reverse items-start justify-between lg:flex-row">
         <motion.div
           className="w-full lg:max-w-[530px]"
