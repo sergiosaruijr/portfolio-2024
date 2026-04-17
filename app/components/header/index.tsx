@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { NavItem } from "./nav-item";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import Link from 'next/link';
+import { NavItem } from './nav-item';
+import { motion } from 'framer-motion';
 
 const NAV_ITEMS = [
   {
-    label: "Home",
-    href: "/",
+    label: 'Home',
+    href: '/',
   },
   {
-    label: "Projetos",
-    href: "/projects",
+    label: 'Projetos',
+    href: '/projects',
   },
 ];
 

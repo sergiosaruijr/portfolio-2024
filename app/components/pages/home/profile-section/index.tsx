@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { techBadgeAnimation } from '@/app/lib/animations';
+import { Header } from '@/app/components/header';
 
 type ProfileSectionProps = {
   homeInfo: HomePageInfo;
@@ -23,7 +24,7 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
   };
 
   return (
-    <section className="flex w-full flex-col justify-end bg-profile-image bg-cover bg-center bg-no-repeat py-32 pb-10 sm:pb-32 lg:h-[755px] lg:pb-[110px]">
+    <section className="flex w-full flex-col justify-start bg-profile-image bg-cover bg-center bg-no-repeat py-32 pb-40 pt-28 sm:pb-32 lg:h-[755px] lg:pb-[110px]">
       <div className="container flex flex-col-reverse items-start justify-between lg:flex-row">
         <motion.div
           className="w-full lg:max-w-[530px]"
@@ -39,7 +40,6 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
               <RichText content={homeInfo.introduction.raw} />
               {/* Descobrir o erro aqui */}
             </div>
-
             <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
               {homeInfo.technologies.map((tech, i) => (
                 <TechBadge
