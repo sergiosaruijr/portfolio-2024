@@ -1,7 +1,7 @@
-import { cn } from '@/app/lib/utils';
-import { ButtonHTMLAttributes } from 'react';
+import { cn } from '@/app/lib/utils'
+import { ButtonHTMLAttributes } from 'react'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button = ({ children, className, ...props }: ButtonProps) => {
   return (
@@ -14,5 +14,5 @@ export const Button = ({ children, className, ...props }: ButtonProps) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}

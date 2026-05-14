@@ -1,14 +1,14 @@
-import { RichText as CMSRichText } from '@graphcms/rich-text-react-renderer';
-import { RichTextContent } from '@graphcms/rich-text-types';
-import { ComponentProps } from 'react';
+import { RichText as CMSRichText } from '@graphcms/rich-text-react-renderer'
+import { RichTextContent } from '@graphcms/rich-text-types'
+import { ComponentProps } from 'react'
 
 type RichTextProps = ComponentProps<typeof CMSRichText> & {
-  content: RichTextContent | null;
-};
+  content: RichTextContent | null
+}
 
 export const RichText = ({ content, ...props }: RichTextProps) => {
   if (!content || Object.keys(content).length === 0) {
-    return <div>Sem conteúdo disponível.</div>;
+    return <div>Sem conteúdo disponível.</div>
   }
   return (
     <CMSRichText
@@ -33,5 +33,5 @@ export const RichText = ({ content, ...props }: RichTextProps) => {
         ),
       }}
     />
-  );
-};
+  )
+}

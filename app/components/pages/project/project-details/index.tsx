@@ -1,19 +1,19 @@
-'use client';
-import { Button } from '@/app/components/button';
-import { SectionTitle } from '@/app/components/section-title';
-import { TechBadge } from '@/app/components/tech-badge';
-import { TbBrandGithub } from 'react-icons/tb';
-import { FiGlobe } from 'react-icons/fi';
-import { Link } from '@/app/components/link';
-import { HiArrowNarrowLeft } from 'react-icons/hi';
-import { Project } from '@/app/types/projects';
-import { RichText } from '@/app/components/rich-text';
-import { motion } from 'framer-motion';
-import { fadeUpAnimation, techBadgeAnimation } from '@/app/lib/animations';
+'use client'
+import { Button } from '@/app/components/button'
+import { SectionTitle } from '@/app/components/section-title'
+import { TechBadge } from '@/app/components/tech-badge'
+import { TbBrandGithub } from 'react-icons/tb'
+import { FiGlobe } from 'react-icons/fi'
+import { Link } from '@/app/components/link'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { Project } from '@/app/types/projects'
+import { RichText } from '@/app/components/rich-text'
+import { motion } from 'framer-motion'
+import { fadeUpAnimation, techBadgeAnimation } from '@/app/lib/animations'
 
 type ProjectDetailsProps = {
-  project: Project;
-};
+  project: Project
+}
 
 export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
@@ -75,5 +75,5 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         Voltar para projetos
       </Link>
     </section>
-  );
-};
+  )
+}

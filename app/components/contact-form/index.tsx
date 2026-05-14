@@ -1,23 +1,23 @@
-'use client';
+'use client'
 
-import { HiArrowNarrowRight } from 'react-icons/hi';
-import { Button } from '../button';
-import { SectionTitle } from '../section-title';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import axios from 'axios';
-import toast from 'react-hot-toast';
-import { motion } from 'framer-motion';
-import { fadeUpAnimation } from '@/app/lib/animations';
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { Button } from '../button'
+import { SectionTitle } from '../section-title'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import axios from 'axios'
+import toast from 'react-hot-toast'
+import { motion } from 'framer-motion'
+import { fadeUpAnimation } from '@/app/lib/animations'
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
   email: z.string().email(),
   message: z.string().min(1).max(500),
-});
+})
 
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = z.infer<typeof contactFormSchema>
 
 export const ContactForm = () => {
   const {
@@ -27,17 +27,17 @@ export const ContactForm = () => {
     formState: { isSubmitting },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-  });
+  })
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      await axios.post('/api/contact', data);
-      toast.success('Mensagem enviada com sucesso!');
-      reset();
+      await axios.post('/api/contact', data)
+      toast.success('Mensagem enviada com sucesso!')
+      reset()
     } catch {
-      toast.error('Ocorreu um erro ao enviar a mensagem. Tente novamente.');
+      toast.error('Ocorreu um erro ao enviar a mensagem. Tente novamente.')
     }
-  };
+  }
 
   return (
     <section
@@ -87,5 +87,5 @@ export const ContactForm = () => {
         </motion.form>
       </div>
     </section>
-  );
-};
+  )
+}

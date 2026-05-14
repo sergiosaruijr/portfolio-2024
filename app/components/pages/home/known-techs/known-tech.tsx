@@ -1,10 +1,10 @@
-import { CMSIcon } from '@/app/components/cms-icon';
-import { KnownTech as IKnownTech } from '@/app/types/projects';
-import { getRelativeTimeString } from '@/app/utils/get-relative-time';
+import { CMSIcon } from '@/app/components/cms-icon'
+import { KnownTech as IKnownTech } from '@/app/types/projects'
+import { getRelativeTimeString } from '@/app/utils/get-relative-time'
 
 type KnownTechProps = {
-  tech: IKnownTech;
-};
+  tech: IKnownTech
+}
 
 export const KnownTech = ({ tech }: KnownTechProps) => {
   // const relativeTime = getRelativeTimeString(new Date(tech.startDate), 'pt-BR');
@@ -17,5 +17,5 @@ export const KnownTech = ({ tech }: KnownTechProps) => {
 
       {/* <span>{relativeTime}</span> */}
     </div>
-  );
-};
+  )
+}
