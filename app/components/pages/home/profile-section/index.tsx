@@ -1,27 +1,27 @@
-'use client';
+'use client'
 
-import { Button } from '@/app/components/button';
-import { CMSIcon } from '@/app/components/cms-icon';
-import { RichText } from '@/app/components/rich-text';
-import { TechBadge } from '@/app/components/tech-badge';
-import { HomePageInfo } from '@/app/types/page-info';
-import Image from 'next/image';
-import { HiArrowNarrowRight } from 'react-icons/hi';
-import { motion } from 'framer-motion';
-import { techBadgeAnimation } from '@/app/lib/animations';
-import { Header } from '@/app/components/header';
+import { Button } from '@/app/components/button'
+import { CMSIcon } from '@/app/components/cms-icon'
+import { RichText } from '@/app/components/rich-text'
+import { TechBadge } from '@/app/components/tech-badge'
+import { HomePageInfo } from '@/app/types/page-info'
+import Image from 'next/image'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { motion } from 'framer-motion'
+import { techBadgeAnimation } from '@/app/lib/animations'
+import { Header } from '@/app/components/header'
 
 type ProfileSectionProps = {
-  homeInfo: HomePageInfo;
-};
+  homeInfo: HomePageInfo
+}
 
 export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
   const handleContact = () => {
-    const contactSection = document.querySelector('#contact');
+    const contactSection = document.querySelector('#contact')
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
   return (
     <section className="flex w-full flex-col justify-start bg-profile-image bg-cover bg-center bg-no-repeat py-32 pb-40 pt-[120px] sm:pb-32 lg:h-[755px] lg:pb-[110px]">
@@ -91,5 +91,5 @@ export const ProfileSection = ({ homeInfo }: ProfileSectionProps) => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}

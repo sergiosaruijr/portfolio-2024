@@ -1,10 +1,10 @@
-import { HighlightedProjects } from './components/pages/home/highlighted-projects';
-import { KnownTechs } from './components/pages/home/known-techs';
-import { ProfileSection } from './components/pages/home/profile-section';
-import { WorkExperience } from './components/pages/home/work-experience';
-import { HomePageData } from './types/page-info';
-import { fetchHygraphQuery } from './utils/fetch-hygraph-query';
-import { RichTextContent } from '@graphcms/rich-text-types';
+import { HighlightedProjects } from './components/pages/home/highlighted-projects'
+import { KnownTechs } from './components/pages/home/known-techs'
+import { ProfileSection } from './components/pages/home/profile-section'
+import { WorkExperience } from './components/pages/home/work-experience'
+import { HomePageData } from './types/page-info'
+import { fetchHygraphQuery } from './utils/fetch-hygraph-query'
+import { RichTextContent } from '@graphcms/rich-text-types'
 
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
@@ -57,10 +57,10 @@ const getPageData = async (): Promise<HomePageData> => {
         }
       }
     }
-  `;
+  `
 
   try {
-    const data = await fetchHygraphQuery<HomePageData>(query, 60 * 60 * 24);
+    const data = await fetchHygraphQuery<HomePageData>(query, 60 * 60 * 24)
 
     if (!data || !data.page) {
       // Retornar um fallback se os dados não forem encontrados
@@ -74,12 +74,12 @@ const getPageData = async (): Promise<HomePageData> => {
           highlightProjects: [],
         },
         workExperiences: [],
-      };
+      }
     }
 
-    return data;
+    return data
   } catch (error) {
-    console.error('Erro ao buscar dados:', error);
+    console.error('Erro ao buscar dados:', error)
 
     // Fallback para casos de erro
     return {
@@ -92,12 +92,12 @@ const getPageData = async (): Promise<HomePageData> => {
         highlightProjects: [],
       },
       workExperiences: [],
-    };
+    }
   }
-};
+}
 
 export default async function Home() {
-  const { page: pageData, workExperiences } = await getPageData();
+  const { page: pageData, workExperiences } = await getPageData()
 
   // console.log(pageData);
 
@@ -108,5 +108,5 @@ export default async function Home() {
       <HighlightedProjects projects={pageData.highlightProjects} />
       <WorkExperience experiences={workExperiences} />
     </>
-  );
+  )
 }
