@@ -1,6 +1,6 @@
-import { RichText as CMSRichText } from "@graphcms/rich-text-react-renderer";
-import { RichTextContent } from "@graphcms/rich-text-types";
-import { ComponentProps } from "react";
+import { RichText as CMSRichText } from '@graphcms/rich-text-react-renderer';
+import { RichTextContent } from '@graphcms/rich-text-types';
+import { ComponentProps } from 'react';
 
 type RichTextProps = ComponentProps<typeof CMSRichText> & {
   content: RichTextContent | null;

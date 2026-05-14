@@ -1,9 +1,9 @@
-import { ProjectDetails } from "@/app/components/pages/project/project-details";
-import { ProjectSections } from "@/app/components/pages/project/project-sections";
-import { ProjectPageData, ProjectsPageStaticData } from "@/app/types/page-info";
-import { fetchHygraphQuery } from "@/app/utils/fetch-hygraph-query";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { ProjectDetails } from '@/app/components/pages/project/project-details';
+import { ProjectSections } from '@/app/components/pages/project/project-sections';
+import { ProjectPageData, ProjectsPageStaticData } from '@/app/types/page-info';
+import { fetchHygraphQuery } from '@/app/utils/fetch-hygraph-query';
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 type ProjectProps = {
   params: {

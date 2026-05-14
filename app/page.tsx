@@ -1,10 +1,10 @@
-import { HighlightedProjects } from "./components/pages/home/highlighted-projects";
-import { KnownTechs } from "./components/pages/home/known-techs";
-import { ProfileSection } from "./components/pages/home/profile-section";
-import { WorkExperience } from "./components/pages/home/work-experience";
-import { HomePageData } from "./types/page-info";
-import { fetchHygraphQuery } from "./utils/fetch-hygraph-query";
-import { RichTextContent } from "@graphcms/rich-text-types";
+import { HighlightedProjects } from './components/pages/home/highlighted-projects';
+import { KnownTechs } from './components/pages/home/known-techs';
+import { ProfileSection } from './components/pages/home/profile-section';
+import { WorkExperience } from './components/pages/home/work-experience';
+import { HomePageData } from './types/page-info';
+import { fetchHygraphQuery } from './utils/fetch-hygraph-query';
+import { RichTextContent } from '@graphcms/rich-text-types';
 
 const getPageData = async (): Promise<HomePageData> => {
   const query = `
@@ -68,7 +68,7 @@ const getPageData = async (): Promise<HomePageData> => {
         page: {
           introduction: { raw: {} as RichTextContent },
           technologies: [],
-          profilePicture: { url: "" },
+          profilePicture: { url: '' },
           socials: [],
           knownTechs: [],
           highlightProjects: [],
@@ -79,14 +79,14 @@ const getPageData = async (): Promise<HomePageData> => {
 
     return data;
   } catch (error) {
-    console.error("Erro ao buscar dados:", error);
+    console.error('Erro ao buscar dados:', error);
 
     // Fallback para casos de erro
     return {
       page: {
         introduction: { raw: {} as RichTextContent },
         technologies: [],
-        profilePicture: { url: "" },
+        profilePicture: { url: '' },
         socials: [],
         knownTechs: [],
         highlightProjects: [],
