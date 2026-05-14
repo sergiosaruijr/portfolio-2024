@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { RichText } from "@/app/components/rich-text";
-import { TechBadge } from "@/app/components/tech-badge";
-import { WorkExperience } from "@/app/types/work-experience";
-import exp from "constants";
-import { differenceInMonths, differenceInYears, format } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
+import { RichText } from '@/app/components/rich-text';
+import { TechBadge } from '@/app/components/tech-badge';
+import { WorkExperience } from '@/app/types/work-experience';
+import exp from 'constants';
+import { differenceInMonths, differenceInYears, format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { fadeUpAnimation, techBadgeAnimation } from '@/app/lib/animations';
 
 type ExperienceItemProps = {
   experience: WorkExperience;
@@ -27,10 +27,10 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
 
   const startDate = new Date(experience.startDate);
 
-  const formattedStartDate = format(startDate, "MMM yyyy", { locale: ptBR });
+  const formattedStartDate = format(startDate, 'MMM yyyy', { locale: ptBR });
   const formattedEndDate = endDate
-    ? format(new Date(endDate), "MMM yyyy", { locale: ptBR })
-    : "o momento";
+    ? format(new Date(endDate), 'MMM yyyy', { locale: ptBR })
+    : 'o momento';
 
   const end = endDate ? new Date(endDate) : new Date();
 
@@ -40,12 +40,12 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
 
   const formattedDuration =
     years > 0
-      ? `${years} ano${years > 1 ? "s" : ""}${
+      ? `${years} ano${years > 1 ? 's' : ''}${
           monthsRemaining > 0
-            ? ` e ${monthsRemaining} mes${monthsRemaining > 1 ? "es" : ""}`
-            : ""
+            ? ` e ${monthsRemaining} mes${monthsRemaining > 1 ? 'es' : ''}`
+            : ''
         }`
-      : `${months} mes${months > 1 ? "es" : ""}`;
+      : `${months} mes${months > 1 ? 'es' : ''}`;
 
   return (
     <motion.div
@@ -72,7 +72,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
           <a
             href={companyUrl}
             target="_blank"
-            className="texxt-gray-500 hover:text-emerald-500 transition-colors"
+            className="texxt-gray-500 transition-colors hover:text-emerald-500"
           >
             @ {companyName}
           </a>
@@ -85,10 +85,10 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
           </div>
         </div>
 
-        <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
+        <p className="mb-3 mt-6 text-sm font-semibold text-gray-400">
           Competências
         </p>
-        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
+        <div className="mb-8 flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[350px]">
           {technologies?.map((tech, i) => (
             <TechBadge
               key={`experience-${companyName}-tech-${tech.name}`}
